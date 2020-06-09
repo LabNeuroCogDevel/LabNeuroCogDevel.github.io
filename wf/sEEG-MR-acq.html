@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-06-09 Tue 14:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2dd0403">1. Slice timing info is off?</a></li>
+<li><a href="#org1e85830">2. Nifit values</a></li>
+<li><a href="#orgfd8f374">3. Example Dicoms</a>
+<ul>
+<li><a href="#orgf904036">3.1. TR is fast</a></li>
+<li><a href="#org6ac0dca">3.2. Slice Timing is not multiband</a></li>
+</ul>
+</li>
+<li><a href="#org7077c3d">4. Best guess TR</a></li>
+<li><a href="#org3b89147">5. Full DCM info</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2dd0403" class="outline-2">
+<h2 id="org2dd0403"><span class="section-number-2">1</span> Slice timing info is off?</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The "<code>MULTIBAND_R-BOLD#1_EYESFIXED</code>" acquisitions <a href="#orgf904036">report a TR</a> and <a href="#org6ac0dca">slice timing</a> that do not align. <a href="#org7077c3d">The TR could be</a> <code>1.81</code> seconds instead of <code>525</code> ms.
+Or, more likely, we do not have accurate slice timing info. Despite the multiband sequence name, the each slices onset time is it's own. Mutliband should have multiple slices squired at the same time.
+</p>
+
+<p>
+Also see <a href="#org3b89147">a representative full dicom dump</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1e85830" class="outline-2">
+<h2 id="org1e85830"><span class="section-number-2">2</span> Nifit values</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+If TR is <code>.525</code> seconds, with <code>573</code> volumes, duration would be <code>5.01</code> minutes. Duration for conventional <code>RESTING</code> is also <code>5 min</code>.
+The resolution of the fast scan is 4x4x4, high enough for a fast TR?
+</p>
+
+<p>
+The first 2 <code>restlong</code> are <code>MULTIBAND_R-BOLD#1_EYESFIXED</code>. The last is <code>RESTING</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">3dinfo -n4 -tr -ad3 -iname /Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/*nii.gz
+</pre>
+</div>
+
+<pre class="example">
+64	64	32	573	0.525000	4.000000	4.000000	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restlong_run-01_bold.nii.gz
+64	64	32	573	0.525000	4.000000	4.000000	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restlong_run-02_bold.nii.gz
+64	64	36	150	2.000000	3.437500	3.437500	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restshort_run-01_bold.nii.gz
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgfd8f374" class="outline-2">
+<h2 id="orgfd8f374"><span class="section-number-2">3</span> Example Dicoms</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+looking at first dicom of each of the 3 rests from E07
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #a1db00;">for</span> d<span style="color: #a1db00;"> in</span> /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_*/scans/*/; <span style="color: #a1db00;">do</span> find $<span style="color: #ff8700;">d</span> -type f -print -quit; <span style="color: #a1db00;">done</span>
+</pre>
+</div>
+
+<pre class="example">
+/Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
+/Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/30/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-30-1-1kwqlvg.dcm
+/Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR5/scans/23/DICOM/2.16.840.1.114151.2.2.10.43928.6294.8227563-23-1-1kwqksd.dcm
+
+</pre>
+</div>
+
+<div id="outline-container-orgf904036" class="outline-3">
+<h3 id="orgf904036"><span class="section-number-3">3.1</span> TR is fast</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<code>525</code> ms is fast! The non-MB rest is reasonable at <code>2</code> seconds.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #d18aff;">echo</span> <span style="color: #ff4ea3;">"acq       tr"</span>
+xargs dicom_hinfo -tag 0018,1030 0018,0080 -no_name -sepstr $<span style="color: #ff4ea3;">'\t'</span>
+</pre>
+</div>
+
+<pre class="example">
+acq	tr
+MULTIBAND_R-BOLD#1_EYESFIXED	525
+MULTIBAND_R-BOLD#2_EYESFIXED	525
+RESTING	2000
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6ac0dca" class="outline-3">
+<h3 id="org6ac0dca"><span class="section-number-3">3.2</span> Slice Timing is not multiband</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+The dcm report interleaved slices. Multi-band should have some slices sharing the same slice time. 
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #a1db00;">while </span><span style="color: #d18aff;">read</span> dcm; <span style="color: #a1db00;">do</span>
+ <span style="color: #ff8700;">p</span>=$<span style="color: #dd0000; font-weight: bold;">(</span><span style="color: #fa8072;">dicom_hinfo</span> -tag 0018,1030 -no_name $<span style="color: #ff8700;">dcm</span><span style="color: #dd0000; font-weight: bold;">)</span>
+ dicom_hdr -slice_times_verb $<span style="color: #ff8700;">dcm</span> 2&gt;&amp;1|
+  perl -slane <span style="color: #ff4ea3;">'next unless m/0{5}/; print map {sprintf "$p\t%.2f\n", $_} @F;'</span> -- -p=$<span style="color: #ff8700;">p</span>
+<span style="color: #a1db00;">done</span>
+</pre>
+</div>
+
+<pre class="example" id="slicetimes">
+MULTIBAND_R-BOLD#1_EYESFIXED	0.00
+MULTIBAND_R-BOLD#1_EYESFIXED	905.00
+MULTIBAND_R-BOLD#1_EYESFIXED	55.00
+MULTIBAND_R-BOLD#1_EYESFIXED	962.50
+MULTIBAND_R-BOLD#1_EYESFIXED	112.50
+MULTIBAND_R-BOLD#1_EYESFIXED	1020.00
+MULTIBAND_R-BOLD#1_EYESFIXED	170.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1075.00
+MULTIBAND_R-BOLD#1_EYESFIXED	225.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1132.50
+MULTIBAND_R-BOLD#1_EYESFIXED	282.50
+MULTIBAND_R-BOLD#1_EYESFIXED	1190.00
+MULTIBAND_R-BOLD#1_EYESFIXED	340.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1245.00
+MULTIBAND_R-BOLD#1_EYESFIXED	395.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1302.50
+MULTIBAND_R-BOLD#1_EYESFIXED	452.50
+MULTIBAND_R-BOLD#1_EYESFIXED	1360.00
+MULTIBAND_R-BOLD#1_EYESFIXED	510.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1417.50
+MULTIBAND_R-BOLD#1_EYESFIXED	565.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1472.50
+MULTIBAND_R-BOLD#1_EYESFIXED	622.50
+MULTIBAND_R-BOLD#1_EYESFIXED	1530.00
+MULTIBAND_R-BOLD#1_EYESFIXED	680.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1587.50
+MULTIBAND_R-BOLD#1_EYESFIXED	735.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1642.50
+MULTIBAND_R-BOLD#1_EYESFIXED	792.50
+MULTIBAND_R-BOLD#1_EYESFIXED	1700.00
+MULTIBAND_R-BOLD#1_EYESFIXED	850.00
+MULTIBAND_R-BOLD#1_EYESFIXED	1757.50
+
+MULTIBAND_R-BOLD#2_EYESFIXED	0.00
+MULTIBAND_R-BOLD#2_EYESFIXED	907.50
+MULTIBAND_R-BOLD#2_EYESFIXED	57.50
+MULTIBAND_R-BOLD#2_EYESFIXED	965.00
+MULTIBAND_R-BOLD#2_EYESFIXED	115.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1020.00
+MULTIBAND_R-BOLD#2_EYESFIXED	170.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1077.50
+MULTIBAND_R-BOLD#2_EYESFIXED	227.50
+MULTIBAND_R-BOLD#2_EYESFIXED	1135.00
+MULTIBAND_R-BOLD#2_EYESFIXED	285.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1190.00
+MULTIBAND_R-BOLD#2_EYESFIXED	340.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1247.50
+MULTIBAND_R-BOLD#2_EYESFIXED	397.50
+MULTIBAND_R-BOLD#2_EYESFIXED	1305.00
+MULTIBAND_R-BOLD#2_EYESFIXED	455.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1360.00
+MULTIBAND_R-BOLD#2_EYESFIXED	510.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1417.50
+MULTIBAND_R-BOLD#2_EYESFIXED	567.50
+MULTIBAND_R-BOLD#2_EYESFIXED	1475.00
+MULTIBAND_R-BOLD#2_EYESFIXED	625.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1530.00
+MULTIBAND_R-BOLD#2_EYESFIXED	680.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1587.50
+MULTIBAND_R-BOLD#2_EYESFIXED	737.50
+MULTIBAND_R-BOLD#2_EYESFIXED	1645.00
+MULTIBAND_R-BOLD#2_EYESFIXED	795.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1700.00
+MULTIBAND_R-BOLD#2_EYESFIXED	850.00
+MULTIBAND_R-BOLD#2_EYESFIXED	1757.50
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7077c3d" class="outline-2">
+<h2 id="org7077c3d"><span class="section-number-2">4</span> Best guess TR</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Were the slice times accurate, the TR would probably be <code>1.815</code> seconds: the later difference between slices + final slice time.
+</p>
+
+<p>
+The average time between slices is less than the last. I'm not sure which is appropriate to use. average, last, first difference.
+The range is <code>1.7</code> ms
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #5fafd7;">library</span><span style="color: #dd0000; font-weight: bold;">(</span>dplyr<span style="color: #dd0000; font-weight: bold;">)</span>
+d<span style="color: #5fafd7;">&lt;-</span>
+  read.table<span style="color: #dd0000; font-weight: bold;">(</span>text=slicetimes,sep=<span style="color: #ff4ea3;">"\t"</span>, comment.char=<span style="color: #ff4ea3;">""</span><span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span>
+  <span style="color: #c6c6c6; background-color: #303030;">`names&lt;-`</span><span style="color: #dd0000; font-weight: bold;">(</span>c<span style="color: #5fafd7; font-weight: bold;">(</span><span style="color: #ff4ea3;">'protocol'</span>,<span style="color: #ff4ea3;">'time'</span><span style="color: #5fafd7; font-weight: bold;">)</span><span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span>
+  arrange<span style="color: #dd0000; font-weight: bold;">(</span>protocol, time<span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span> 
+  group_by<span style="color: #dd0000; font-weight: bold;">(</span>protocol<span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span> mutate<span style="color: #dd0000; font-weight: bold;">(</span>
+    slice=1:n<span style="color: #5fafd7; font-weight: bold;">()</span>,
+    odd=slice%%2==1,
+    df=c<span style="color: #5fafd7; font-weight: bold;">(</span><span style="color: #00d7af;">NA</span>,diff<span style="color: #a1db00; font-weight: bold;">(</span>time<span style="color: #a1db00; font-weight: bold;">)</span><span style="color: #5fafd7; font-weight: bold;">)</span><span style="color: #dd0000; font-weight: bold;">)</span>
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #5fafd7;">require</span><span style="color: #dd0000; font-weight: bold;">(</span>ggplot2<span style="color: #dd0000; font-weight: bold;">)</span>
+theme_set<span style="color: #dd0000; font-weight: bold;">(</span>cowplot::theme_cowplot<span style="color: #5fafd7; font-weight: bold;">()</span><span style="color: #dd0000; font-weight: bold;">)</span>
+<span style="color: #6c6c6c; font-style: italic;">#</span><span style="color: #6c6c6c; font-style: italic;">d %&gt;% ggplot()+aes(x=slice,y=time, group=paste(protocol,odd), color=odd) + geom_point()</span>
+d <span style="color: #5fafd7;">%&gt;%</span> ggplot<span style="color: #dd0000; font-weight: bold;">()</span> + aes<span style="color: #dd0000; font-weight: bold;">(</span>x=df, fill=odd,alpha=.5<span style="color: #dd0000; font-weight: bold;">)</span> + geom_density<span style="color: #dd0000; font-weight: bold;">()</span> +
+  ggtitle<span style="color: #dd0000; font-weight: bold;">(</span><span style="color: #ff4ea3;">'dist of slice sample time difference'</span><span style="color: #dd0000; font-weight: bold;">)</span> 
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="slicetimes.png" alt="slicetimes.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">d <span style="color: #5fafd7;">%&gt;%</span> summarise<span style="color: #dd0000; font-weight: bold;">(</span>mean<span style="color: #5fafd7; font-weight: bold;">(</span>df,na.rm=T<span style="color: #5fafd7; font-weight: bold;">)</span><span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span> print.data.frame<span style="color: #dd0000; font-weight: bold;">()</span>
+d <span style="color: #5fafd7;">%&gt;%</span> filter<span style="color: #dd0000; font-weight: bold;">(</span>time==max<span style="color: #5fafd7; font-weight: bold;">(</span>time<span style="color: #5fafd7; font-weight: bold;">)</span><span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span> mutate<span style="color: #dd0000; font-weight: bold;">(</span>tr=time+df<span style="color: #dd0000; font-weight: bold;">)</span> <span style="color: #5fafd7;">%&gt;%</span> print.data.frame
+</pre>
+</div>
+
+<pre class="example">
+                      protocol mean(df, na.rm = T)
+1 MULTIBAND_R-BOLD#1_EYESFIXED            56.69355
+2 MULTIBAND_R-BOLD#2_EYESFIXED            56.69355
+
+                      protocol   time slice   odd   df   tr
+1 MULTIBAND_R-BOLD#1_EYESFIXED 1757.5    32 FALSE 57.5 1815
+2 MULTIBAND_R-BOLD#2_EYESFIXED 1757.5    32 FALSE 57.5 1815
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b89147" class="outline-2">
+<h2 id="org3b89147"><span class="section-number-2">5</span> Full DCM info</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+for one of the "multiband" protocols.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">dicom_hdr /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
+</pre>
+</div>
+
+<pre class="example">
+DICOM File: /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
+Object type: ELEMENT LIST
+Object size: 421462
+Group: 0002, Length:      196
+0002 0000        4 [140     ] //              META Group Length// 196
+0002 0001        2 [156     ] //META File Meta Information Version//hex OB: (len 2)00 01 
+0002 0002       26 [166     ] //META Media Stored SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0002 0003       52 [200     ] //META Media Stored SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596137537633
+0002 0010       20 [260     ] //       META Transfer Syntax UID//1.2.840.10008.1.2.1
+0002 0012       16 [288     ] //  META Implementation Class UID//1.2.40.0.13.1.1
+0002 0013       12 [312     ] //META Implementation Version Name//dcm4che-2.0 
+0002 0016       12 [332     ] //META Source Application Entity Title//STENTOR_SCU 
+Group: 0008, Length:      681
+0008 0005       10 [352     ] //      ID Specific Character Set//ISO_IR 100
+0008 0008       28 [370     ] //                  ID Image Type//ORIGINAL\PRIMARY\M\ND\MOSAIC
+0008 0012        8 [406     ] //      ID Instance Creation Date//20191130
+0008 0013       14 [422     ] //      ID Instance Creation Time//221124.316000 
+0008 0016       26 [444     ] //               ID SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 0018       52 [478     ] //            ID SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596137537633
+0008 0020        8 [538     ] //                  ID Study Date//20191130
+0008 0021        8 [554     ] //                 ID Series Date//20191130
+0008 0022        8 [570     ] //            ID Acquisition Date//20191130
+0008 0023        8 [586     ] //                  ID Image Date//20191130
+0008 0030       14 [602     ] //                  ID Study Time//212555.006000 
+0008 0031       14 [624     ] //                 ID Series Time//221124.309000 
+0008 0032       14 [646     ] //            ID Acquisition Time//221052.505000 
+0008 0033       14 [668     ] //                  ID Image Time//221124.316000 
+0008 0060        2 [690     ] //                    ID Modality//MR
+0008 0070        8 [700     ] //                ID Manufacturer//SIEMENS 
+0008 0080        4 [716     ] //            ID Institution Name//CHP 
+0008 0081       50 [728     ] //         ID Institution Address//Penn Avenue 4401,Pittsburgh,Pennsylvania,US,15224 
+0008 0090        6 [786     ] //  ID Referring Physician's Name//EDDENS
+0008 1010        6 [800     ] //                ID Station Name//CHPMR5
+0008 1030       34 [814     ] //           ID Study Description//MR BRAIN WITH AND WITHOUT CONTRAST
+0008 1032       -1 [0       ] //     ID Procedure Code Sequence//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 82
+Group: 0008, Length:       74
+0008 0100       10 [876     ] //                  ID Code Value//MRBRAINWX 
+0008 0102        6 [894     ] //    ID Coding Scheme Designator//LOCAL 
+0008 0104       34 [908     ] //                ID Code Meaning//MR BRAIN WITH AND WITHOUT CONTRAST
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+0008 103e       28 [966     ] //          ID Series Description//MULTIBAND_R-BOLD#1_EYESFIXED
+0008 1040       10 [1002    ] //ID Institutional Department Name//Department
+0008 1048       20 [1020    ] //         ID Physician of Record//EDDENS^TAYLOR^JOHN^^
+0008 1050       20 [1048    ] // ID Performing Physician's Name//EDDENS^TAYLOR^JOHN^^
+0008 1070       10 [1076    ] //             ID Operator's Name//EB SEIMENS
+0008 1090        6 [1094    ] //     ID Manufacturer Model Name//Skyra 
+0008 1110       -1 [0       ] //   ID Referenced Study Sequence//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 92
+Group: 0008, Length:       84
+0008 1150       24 [1128    ] //    ID Referenced SOP Class UID//1.2.840.10008.3.1.2.3.1
+0008 1155       44 [1160    ] // ID Referenced SOP Instance UID//2.16.840.1.114151.2.2.10.43797.6683.8058562
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+0008 1120       -1 [0       ] // ID Referenced Patient Sequence//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 92
+Group: 0008, Length:       84
+0008 1150       24 [1248    ] //    ID Referenced SOP Class UID//1.2.840.10008.3.1.2.1.1
+0008 1155       44 [1280    ] // ID Referenced SOP Instance UID//2.16.840.1.114151.2.2.10.43794.6574.8056073
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+0008 1140       -1 [0       ] //   ID Referenced Image Sequence//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1368    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1402    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.2019113021270386370416762
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1478    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1512    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.2019113021295764440417337
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1588    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1622    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.2019113021374518272619038
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+0008 2112       -1 [0       ] //       ID Source Image Sequence//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1718    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1752    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595457037600
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1828    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1862    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595484737601
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [1938    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [1972    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595508137603
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2048    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2082    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595528437604
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2158    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2192    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595547537605
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2268    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2302    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595566837606
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2378    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2412    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595586837607
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2488    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2522    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595609337608
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2598    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2632    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595629237609
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2708    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2742    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595649037610
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2818    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2852    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595668637611
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [2928    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [2962    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595688237612
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3038    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3072    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595710837613
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3148    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3182    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595730437614
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3258    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3292    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595751537615
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3368    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3402    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595772237616
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3478    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3512    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595792237617
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3588    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3622    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595814637618
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3698    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3732    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595834437619
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3808    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3842    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595854837620
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [3918    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [3952    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595875037621
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4028    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4062    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595893937622
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4138    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4172    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595914937623
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4248    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4282    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595935337624
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4358    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4392    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595954537625
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4468    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4502    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595974237626
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4578    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4612    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210595995237627
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4688    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4722    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596022537628
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4798    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4832    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596042837629
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [4908    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [4942    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596064437630
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [5018    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [5052    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596082537631
+DCM Dump Elements Complete
+Object type: ELEMENT LIST
+Object size: 102
+Group: 0008, Length:       94
+0008 1150       26 [5128    ] //    ID Referenced SOP Class UID//1.2.840.10008.5.1.4.1.1.4
+0008 1155       52 [5162    ] // ID Referenced SOP Instance UID//1.3.12.2.1107.5.2.19.45307.201911302210596103237632
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+Group: 0010, Length:       46
+0010 0040        2 [5238    ] //                PAT Patient Sex//F 
+0010 1010        4 [5248    ] //                PAT Patient Age//004Y
+0010 1020        4 [5260    ] //               PAT Patient Size//0.95
+0010 1030        4 [5272    ] //             PAT Patient Weight//17.5
+Group: 0012, Length:        7
+0012 0064       -1 [0       ] //                               //SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 66
+Group: 0008, Length:       58
+0008 0100        2 [5304    ] //                  ID Code Value//2 
+0008 0102        4 [5314    ] //    ID Coding Scheme Designator//XNAT
+0008 0103        4 [5326    ] //       ID Coding Scheme Version//0.1 
+0008 0104       16 [5338    ] //                ID Code Meaning//XNAT Edit Script
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+Group: 0018, Length:      428
+0018 0015        4 [5378    ] //         ACQ Body Part Examined//HEAD
+0018 0020        2 [5390    ] //          ACQ Scanning Sequence//EP
+0018 0021        2 [5400    ] //           ACQ Sequence Variant//SK
+0018 0022        2 [5410    ] //               ACQ Scan Options//FS
+0018 0023        2 [5420    ] //       ACQ MR Acquisition Type //2D
+0018 0024       12 [5430    ] //              ACQ Sequence Name//epfid2d1_64 
+0018 0025        2 [5450    ] //                 ACQ Angio Flag//N 
+0018 0050        2 [5460    ] //            ACQ Slice Thickness//4 
+0018 0080        4 [5470    ] //            ACQ Repetition Time//525 
+0018 0081        2 [5482    ] //                  ACQ Echo Time//32
+0018 0083        2 [5492    ] //         ACQ Number of Averages//1 
+0018 0084       10 [5502    ] //          ACQ Imaging Frequency//123.247572
+0018 0085        2 [5520    ] //             ACQ Imaged Nucleus//1H
+0018 0086        2 [5530    ] //                ACQ Echo Number//1 
+0018 0087        2 [5540    ] //    ACQ Magnetic Field Strength//3 
+0018 0088       16 [5550    ] //     ACQ Spacing Between Slices//3.9999998769452 
+0018 0089        2 [5574    ] //ACQ Number of Phase Encoding Steps//64
+0018 0091        2 [5584    ] //          ACQ Echo Train Length//64
+0018 0093        4 [5594    ] //           ACQ Percent Sampling//100 
+0018 0094        4 [5606    ] //ACQ Percent Phase Field of View//100 
+0018 0095        4 [5618    ] //            ACQ Pixel Bandwidth//2365
+0018 1000        6 [5630    ] //       ACQ Device Serial Number//45307 
+0018 1020       12 [5644    ] //           ACQ Software Version//syngo MR E11
+0018 1030       28 [5664    ] //              ACQ Protocol Name//MULTIBAND_R-BOLD#1_EYESFIXED
+0018 1251        4 [5700    ] //          ACQ Transmitting Coil//Body
+0018 1310        8 [5712    ] //         ACQ Acquisition Matrix// 64 0 0 64
+0018 1312        4 [5728    ] //   ACQ Phase Encoding Direction//COL 
+0018 1314        2 [5740    ] //                 ACQ Flip Angle//65
+0018 1315        2 [5750    ] //        ACQ Variable Flip Angle//N 
+0018 1316       16 [5760    ] //                        ACQ SAR//0.25402662755524
+0018 1318        2 [5784    ] //                      ACQ DB/DT//0 
+0018 5100        4 [5794    ] //           ACQ Patient Position//HFS 
+Group: 0019, Length:      502
+0019 0010       18 [5806    ] //                               //SIEMENS MR HEADER 
+0019 1008       12 [5832    ] //                               //IMAGE NUM 4 
+0019 1009        4 [5852    ] //                               //1.0 
+0019 100a        2 [5864    ] //                               // 32
+0019 100b        6 [5874    ] //                               //302000
+0019 100f        4 [5888    ] //                               //Fast
+0019 1011        2 [5900    ] //                               //No
+0019 1012       12 [5910    ] //                               // 0
+0019 1013       12 [5930    ] //                               // 0
+0019 1014        6 [5950    ] //                               //0\0\0 
+0019 1015       24 [5964    ] //                               //Unimplemented
+0019 1016        2 [5996    ] //                               //0 
+0019 1017        2 [6006    ] //                               //1 
+0019 1018        4 [6016    ] //                               //3300
+0019 1028        8 [6028    ] //                               //Unimplemented
+0019 1029      256 [6044    ] //                               //Unimplemented
+Group: 0020, Length:      334
+0020 000d       44 [6308    ] //         REL Study Instance UID//2.16.840.1.114151.2.2.10.43797.6683.8058562
+0020 000e       58 [6360    ] //        REL Series Instance UID//1.3.12.2.1107.5.2.19.45307.2019113022104832138537388.0.0.0
+0020 0010        8 [6426    ] //                   REL Study ID//94177750
+0020 0011        2 [6442    ] //              REL Series Number//29
+0020 0012        2 [6452    ] //         REL Acquisition Number//1 
+0020 0013        2 [6462    ] //            REL Instance Number//1 
+0020 0032       50 [6472    ] //     REL Image Position Patient//-770.18116283417\-741.51437759399\-43.539196014404
+0020 0037       12 [6530    ] //REL Image Orientation (Patient)//1\0\0\0\1\0 
+0020 0052       52 [6550    ] //     REL Frame of Reference UID//1.3.12.2.1107.5.2.19.45307.1.20191130212555218.0.0.0
+0020 1040        0 [6610    ] //REL Position Reference Indicator//
+0020 1041       16 [6618    ] //             REL Slice Location//-43.539196014404
+Group: 0028, Length:      160
+0028 0002        2 [6642    ] //          IMG Samples Per Pixel// 1
+0028 0004       12 [6652    ] // IMG Photometric Interpretation//MONOCHROME2 
+0028 0010        2 [6672    ] //                       IMG Rows// 384
+0028 0011        2 [6682    ] //                    IMG Columns// 384
+0028 0030        4 [6692    ] //              IMG Pixel Spacing//4\4 
+0028 0100        2 [6704    ] //             IMG Bits Allocated// 16
+0028 0101        2 [6714    ] //                IMG Bits Stored// 12
+0028 0102        2 [6724    ] //                   IMG High Bit// 11
+0028 0103        2 [6734    ] //       IMG Pixel Representation// 0
+0028 0106        2 [6744    ] // IMG Smallest Image Pixel Value// 0
+0028 0107        2 [6754    ] //  IMG Largest Image Pixel Value// 2428
+0028 1050        4 [6764    ] //              IMG Window Center//701 
+0028 1051        4 [6776    ] //               IMG Window Width//1648
+0028 1055        6 [6788    ] //IMG Window Center &amp; Width Explanation//Algo1 
+Group: 0029, Length:   119158
+0029 0010       18 [6802    ] //                               //SIEMENS CSA HEADER
+0029 0011       22 [6828    ] //                               //SIEMENS MEDCOM HEADER2
+0029 1008       12 [6858    ] //                               //IMAGE NUM 4 
+0029 1009        8 [6878    ] //                               //20191130
+0029 1010    12444 [6898    ] //                               //hex OB: (len 8)53 56 31 30 04 03 02 01 
+0029 1018        2 [19350   ] //                               //MR
+0029 1019        8 [19360   ] //                               //20191130
+0029 1020   106568 [19380   ] //                               //hex OB: (len 8)53 56 31 30 04 03 02 01 
+0029 1160        4 [125956  ] //                               //com 
+Group: 0032, Length:       63
+0032 1032        6 [125968  ] //      SDY Requesting Physician //EDDENS
+0032 1060       34 [125982  ] //SDY Requested Procedure Description//MR BRAIN WITH AND WITHOUT CONTRAST
+0032 1064       -1 [0       ] //SDY Requested Procedure Code Seq//SEQUENCE
+DCM Dump SEQUENCE{
+Object type: ELEMENT LIST
+Object size: 82
+Group: 0008, Length:       74
+0008 0100       10 [126044  ] //                  ID Code Value//MRBRAINWX 
+0008 0102        6 [126062  ] //    ID Coding Scheme Designator//LOCAL 
+0008 0104       34 [126076  ] //                ID Code Meaning//MR BRAIN WITH AND WITHOUT CONTRAST
+DCM Dump Elements Complete
+DCM Dump SEQUENCE Complete}
+Group: 0040, Length:      104
+0040 0244        8 [126134  ] //             PRC PPS Start Date//20191130
+0040 0245       14 [126150  ] //             PRC PPS Start Time//212555.133000 
+0040 0253        8 [126172  ] //                     PRC PPS ID//3333676 
+0040 0254       34 [126188  ] //            PRC PPS Description//MR BRAIN WITH AND WITHOUT CONTRAST
+0040 0280        0 [126230  ] //            PRC Comments on PPS//
+Group: 0051, Length:      214
+0051 0010       18 [126238  ] //                               //SIEMENS MR HEADER 
+0051 1008       12 [126264  ] //                               //IMAGE NUM 4 
+0051 1009        4 [126284  ] //                               //1.0 
+0051 100a        8 [126296  ] //                               //TA 05:02
+0051 100b        6 [126312  ] //                               //64*64 
+0051 100c       14 [126326  ] //                               //FoV 1536*1536 
+0051 100e        4 [126348  ] //                               //Tra 
+0051 100f       12 [126360  ] //                               //HE3,4;NE1,2 
+0051 1012        4 [126380  ] //                               //TP 0
+0051 1013        4 [126392  ] //                               //+LPH
+0051 1016       12 [126404  ] //                               //M/ND/MOSAIC 
+0051 1017        6 [126424  ] //                               //SL 4.0
+0051 1019        6 [126438  ] //                               //A1/FS 
+Group: 0073, Length:       94
+0073 0010        8 [126452  ] //                               //STENTOR 
+0073 1001        8 [126468  ] //                               //unknown 
+0073 1002       10 [126484  ] //                               //10.40.16.5
+0073 1003        8 [126502  ] //                               //MR4_CHP 
+0073 1006       20 [126518  ] //                               //1.2.840.10008.1.2.1 
+Group: 7fe0, Length:   294920
+7fe0 0010   294912 [126550  ] //                 PXL Pixel Data//Data on disk
+DCM Dump Elements Complete
+Pixel array offset = 126550 (bytes)
+Pixel array length = 294912 (bytes)
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2020-06-09 Tue 14:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
