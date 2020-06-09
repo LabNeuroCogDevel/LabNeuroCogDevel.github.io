@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-09 Tue 14:17 -->
+<!-- 2020-06-09 Tue 14:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -228,39 +228,22 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#orgfd05cdc">1. Slice timing info is off?</a></li>
-<li><a href="#org03b5181">2. Nifit values</a></li>
-<li><a href="#orgee56564">3. Example Dicoms</a>
-<ul>
-<li><a href="#orgdb10e0c">3.1. TR is fast</a></li>
-<li><a href="#org8d3379f">3.2. Slice Timing is not multiband</a></li>
-</ul>
-</li>
-<li><a href="#orgc7f7715">4. Best guess TR</a></li>
-<li><a href="#org356fab5">5. Full DCM info</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgfd05cdc" class="outline-2">
-<h2 id="orgfd05cdc"><span class="section-number-2">1</span> Slice timing info is off?</h2>
+<div id="outline-container-org3381dd1" class="outline-2">
+<h2 id="org3381dd1"><span class="section-number-2">1</span> Slice timing info is off?</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-The "<code>MULTIBAND_R-BOLD#1_EYESFIXED</code>" acquisitions <a href="#orgdb10e0c">report a TR</a> and <a href="#org8d3379f">slice timing</a> that do not align. <a href="#orgc7f7715">The TR could be</a> <code>1.81</code> seconds instead of <code>525</code> ms.
-Or, more likely, we do not have accurate slice timing info. Despite the multiband sequence name, the each slices onset time is it's own. Mutliband should have multiple slices squired at the same time.
+The "<code>MULTIBAND_R-BOLD#1_EYESFIXED</code>" acquisitions <a href="#orgfdae369">report a TR</a> and <a href="#orgfb0714b">slice timing</a> that do not align. <a href="#orgd599ca5">The TR could be</a> <code>1.81</code> seconds instead of <code>525</code> ms.
+Or, more likely, we do not have accurate slice timing info. Despite the multiband sequence name, the each slices onset time is it's own. Mutliband should have multiple slices acquired at the same time.
 </p>
 
 <p>
-Also see <a href="#org356fab5">a representative full dicom dump</a>
+Also see <a href="#org8cdf6c6">a representative full dicom dump</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org03b5181" class="outline-2">
-<h2 id="org03b5181"><span class="section-number-2">2</span> Nifit values</h2>
+<div id="outline-container-org4299f1f" class="outline-2">
+<h2 id="org4299f1f"><span class="section-number-2">2</span> Nifit values</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 If TR is <code>.525</code> seconds, with <code>573</code> volumes, duration would be <code>5.01</code> minutes. Duration for conventional <code>RESTING</code> is also <code>5 min</code>.
@@ -284,8 +267,8 @@ The first 2 <code>restlong</code> are <code>MULTIBAND_R-BOLD#1_EYESFIXED</code>.
 </div>
 </div>
 
-<div id="outline-container-orgee56564" class="outline-2">
-<h2 id="orgee56564"><span class="section-number-2">3</span> Example Dicoms</h2>
+<div id="outline-container-org54dc036" class="outline-2">
+<h2 id="org54dc036"><span class="section-number-2">3</span> Example Dicoms</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 looking at first dicom of each of the 3 rests from E07
@@ -303,8 +286,8 @@ looking at first dicom of each of the 3 rests from E07
 </pre>
 </div>
 
-<div id="outline-container-orgdb10e0c" class="outline-3">
-<h3 id="orgdb10e0c"><span class="section-number-3">3.1</span> TR is fast</h3>
+<div id="outline-container-orgfdae369" class="outline-3">
+<h3 id="orgfdae369"><span class="section-number-3">3.1</span> TR is fast</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 <code>525</code> ms is fast! The non-MB rest is reasonable at <code>2</code> seconds.
@@ -326,8 +309,8 @@ RESTING	2000
 </div>
 </div>
 
-<div id="outline-container-org8d3379f" class="outline-3">
-<h3 id="org8d3379f"><span class="section-number-3">3.2</span> Slice Timing is not multiband</h3>
+<div id="outline-container-orgfb0714b" class="outline-3">
+<h3 id="orgfb0714b"><span class="section-number-3">3.2</span> Slice Timing is not multiband</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The dcm report interleaved slices. Multi-band should have some slices sharing the same slice time. 
@@ -413,8 +396,8 @@ MULTIBAND_R-BOLD#2_EYESFIXED	1757.50
 </div>
 </div>
 
-<div id="outline-container-orgc7f7715" class="outline-2">
-<h2 id="orgc7f7715"><span class="section-number-2">4</span> Best guess TR</h2>
+<div id="outline-container-orgd599ca5" class="outline-2">
+<h2 id="orgd599ca5"><span class="section-number-2">4</span> Best guess TR</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Were the slice times accurate, the TR would probably be <code>1.815</code> seconds: the later difference between slices + final slice time.
@@ -473,14 +456,14 @@ d <span style="color: #5fafd7;">%&gt;%</span> filter<span style="color: #dd0000;
 </div>
 </div>
 
-<div id="outline-container-org356fab5" class="outline-2">
-<h2 id="org356fab5"><span class="section-number-2">5</span> Full DCM info</h2>
+<div id="outline-container-org8cdf6c6" class="outline-2">
+<h2 id="org8cdf6c6"><span class="section-number-2">5</span> Full DCM info</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 for one of the "multiband" protocols.
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">dicom_hdr /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
+<pre class="src src-bash">dicom_hdr -sex_info /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
 </pre>
 </div>
 
@@ -922,7 +905,7 @@ Pixel array length = 294912 (bytes)
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-06-09 Tue 14:17</p>
+<p class="date">Created: 2020-06-09 Tue 14:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

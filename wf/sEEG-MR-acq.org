@@ -1,8 +1,9 @@
 #+BIND: org-export-use-babel nil
 #+PROPERTY: header-args    :cache yes
+#+OPTIONS: toc:nil
 * Slice timing info is off?
   The "~MULTIBAND_R-BOLD#1_EYESFIXED~" acquisitions [[*TR is fast][report a TR]] and [[*Slice Timing is not multiband][slice timing]] that do not align. [[*Best guess TR][The TR could be]] ~1.81~ seconds instead of ~525~ ms.
-  Or, more likely, we do not have accurate slice timing info. Despite the multiband sequence name, the each slices onset time is it's own. Mutliband should have multiple slices squired at the same time.
+  Or, more likely, we do not have accurate slice timing info. Despite the multiband sequence name, the each slices onset time is it's own. Mutliband should have multiple slices acquired at the same time.
 
   Also see [[*Full DCM info][a representative full dicom dump]]
 
@@ -15,7 +16,7 @@
 3dinfo -n4 -tr -ad3 -iname /Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/*nii.gz
 #+END_SRC
 
-#+RESULTS:
+#+RESULTS[6ab054843d1fda9baf306602db4a211f3f54b947]:
 : 64	64	32	573	0.525000	4.000000	4.000000	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restlong_run-01_bold.nii.gz
 : 64	64	32	573	0.525000	4.000000	4.000000	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restlong_run-02_bold.nii.gz
 : 64	64	36	150	2.000000	3.437500	3.437500	4.000000	/Volumes/Hera/Raw/BIDS/sEEG_rs/sub-E07/func/sub-E07_task-restshort_run-01_bold.nii.gz
@@ -28,7 +29,7 @@
   #+END_SRC
 
   #+name: first-dicoms
-  #+RESULTS:
+  #+RESULTS[65bb7aba16b0c32c2a4b6115daab3696e9270200]:
   : /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
   : /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/30/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-30-1-1kwqlvg.dcm
   : /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR5/scans/23/DICOM/2.16.840.1.114151.2.2.10.43928.6294.8227563-23-1-1kwqksd.dcm
@@ -41,7 +42,7 @@
   xargs dicom_hinfo -tag 0018,1030 0018,0080 -no_name -sepstr $'\t'
   #+END_SRC
 
-  #+RESULTS:
+  #+RESULTS[3ec64325bb8ef5c1d2a9cab8b5938a9e110a8c4c]:
   : acq	tr
   : MULTIBAND_R-BOLD#1_EYESFIXED	525
   : MULTIBAND_R-BOLD#2_EYESFIXED	525
@@ -58,7 +59,7 @@
   #+END_SRC
 
   #+NAME: slicetimes
-  #+RESULTS:
+  #+RESULTS[42d85a378d6d0fc7f618ca52f09abf80d95a7b27]:
   #+begin_example
   MULTIBAND_R-BOLD#1_EYESFIXED	0.00
   MULTIBAND_R-BOLD#1_EYESFIXED	905.00
@@ -155,7 +156,7 @@
    ggtitle('Dist of slice sample time difference') 
  #+END_SRC
 
- #+RESULTS:
+ #+RESULTS[d486dd4d4a9ffaff754dd4e62cab2b28bd3efe36]:
  [[file:sEEG-slicetime-diff.png]]
 
  #+BEGIN_SRC R :session :results output :exports both
@@ -163,23 +164,22 @@
  d %>% filter(time==max(time)) %>% mutate(tr=time+df) %>% print.data.frame
  #+END_SRC
 
- #+RESULTS:
- : 
+ #+RESULTS[a3cbfc93ae318ec2dccf804f76208ada1e027084]:
  :                       protocol mean(df, na.rm = T)
  : 1 MULTIBAND_R-BOLD#1_EYESFIXED            56.69355
  : 2 MULTIBAND_R-BOLD#2_EYESFIXED            56.69355
  : 
- :                       protocol   time slice   df   tr
- : 1 MULTIBAND_R-BOLD#1_EYESFIXED 1757.5    32 57.5 1815
- : 2 MULTIBAND_R-BOLD#2_EYESFIXED 1757.5    32 57.5 1815
+ :                       protocol   time slice   odd   df   tr
+ : 1 MULTIBAND_R-BOLD#1_EYESFIXED 1757.5    32 FALSE 57.5 1815
+ : 2 MULTIBAND_R-BOLD#2_EYESFIXED 1757.5    32 FALSE 57.5 1815
 
 * Full DCM info
  for one of the "multiband" protocols.
    #+BEGIN_SRC bash :results output :exports both
-   dicom_hdr /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
+   dicom_hdr -sex_info /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
    #+END_SRC
 
-   #+RESULTS:
+   #+RESULTS[059bf106b9e5053b89cadacb6d62472c7b146853]:
    #+begin_example
    DICOM File: /Volumes/L/bea_res/Data/EpilepsyMR/epilepsy_bold/E07/E07_MR3/scans/29/DICOM/2.16.840.1.114151.2.2.10.43797.6683.8058562-29-1-1crpqr5.dcm
    Object type: ELEMENT LIST
