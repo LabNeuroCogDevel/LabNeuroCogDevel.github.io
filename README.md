@@ -1,5 +1,5 @@
 # Docs
-  * [Masks by hand with afni](tuts/afni_draw)
+  * [Masks by hand with afni](/tuts/afni_draw)
 # Tasks
 Development sites for browser-ready javascript (jspsych + psiturk) tasks. 
   * [slips of action fruits task](/slipstask) 
