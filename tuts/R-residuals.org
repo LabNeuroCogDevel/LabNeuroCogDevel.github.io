@@ -1,0 +1,29 @@
+#+Title: Model Residuals with missing data
+
+* Input
+
+  We have a data frame with a ~NA~ value. 
+
+#+begin_src R :session *R* :results  
+  d <- data.frame(x=c(1:4,NA), y=1:5)
+d
+#+end_src
+
+#+RESULTS: df-with-na
+:    x y
+: 1  1 1
+: 2  2 2
+: 3  3 3
+: 4  4 4
+: 5 NA 5
+
+#+begin_src 
+m <- lm(x~y, d, na.action=na.exclude)
+#+end_src
+
+   nrow(d); length(m$residuals); length(residuals(m))
+    [1] 5
+    [1] 4
+    [1] 5
+
+
